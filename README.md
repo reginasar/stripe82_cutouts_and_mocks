@@ -15,6 +15,6 @@ The observation frames can be downloaded from the IAC [Stripe82 website](http://
 The mock galaxies consist of a combination of bulge + disc profiles produced with [Imfit](https://www.mpe.mpg.de/~erwin/code/imfit/) (required) and convolved with the Sloan PSFs in the u,g,r,i and z bands. These are later inserted in a real Stripe82 image.
 
 ### Steps to produce the mocks
-
+[PSFs](https://ui.adsabs.harvard.edu/abs/2020RNAAS...4..130I/abstract)
 
 
