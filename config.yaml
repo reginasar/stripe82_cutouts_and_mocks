@@ -1,0 +1,19 @@
+obs:
+  catalogue: "/path/to/directory/chamba_galaxies.fits"
+  download_script: "/path/to/directory/download.sh"
+  stripe82_frames_path: "/path/to/directory/"
+  cutout_size: 600
+  out_path: "/path/to/directory/cutouts/"
+  seds_path: "/path/to/directory/"
+
+sim:
+  catalogue: "/path/to/directory/sim_galaxies.fits"
+  config_files_path: "/path/to/directory/config_files/"
+  simulated_files_path: "/path/to/directory/simulations/"
+  psf_file: "/path/to/directory/psf-filter-?-v0.5.fits[1]"
+  make_image: "/path/to/diectory/makeimage"
+  background_frames_path: "/path/to/directory/bg_frames/"
+  cutout_size: 600
+  gen_file: "/path/to/directory/gen_fits.sh"
+  out_path: "/path/to/directory/mocks/"
+  
