@@ -33,22 +33,27 @@ The mock galaxies consist of a combination of bulge + disc profiles produced wit
 
 1) Subtract realistic SEDs from the observed galaxies with:
 
+'''
 python get_seds.py
+'''
 
 2) Make a catalogue with properties of your simulated galaxies. Run:
 
+'''
 python mk_catalog.py
-
+'''
 
 3) Get your PSFs. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from here:
 
-[PSFs](https://ui.adsabs.harvard.edu/abs/2020RNAAS...4..130I/abstract)
+[PSFs](https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5317I/abstract)
 
-Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, make sure your PSFs have dimensions smaller or equal to 2N+1, where N is the side of the stamps you want to make.
+Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to '2N+1', where N is the side of the stamps you want to make.
 
 4) Make the simulated profiles for all the galaxies defined in the simulated catalog (step 2). Run:
 
+'''
 python mk_imfit_sim_beta.py
+'''
 
 5) Get back/foreground frames. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
 
@@ -57,7 +62,9 @@ Otherwise skip this step and just set the bg_frames option in the config file to
 
 6) Add realism to your simulated stamps (step 4) by adjusting the flux of the simulated profiles to realistic values (obtained with step 1) and overlap with an observed back/foreground (previous step). Run:
 
+'''
 python mk_mag_fits_beta.py
+'''
 
 
 ## Setup config file
@@ -70,6 +77,7 @@ General guidelines:
 
 - The config file should be completed as:
 
+'''
 obs:
   catalogue: "/path/to/directory/catalogue_obs_galaxies.fits"
   download_script: "/path/to/directory/download.sh"
@@ -89,6 +97,8 @@ sim:
   cutout_size: 600
   gen_file: "/path/to/directory/gen_fits.sh"
   out_path: "/path/to/directory/mocks/"
+
+'''
   
 
 - "?" in psf_file will be replaced with the band name (u,g,r,i or z). The number in "[]" indicates the extensionwhere the PSF is, if Primary then remove "[]".
