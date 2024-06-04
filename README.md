@@ -20,9 +20,11 @@ bash download.sh
 
 2) Produce the cutout stamps witht their respective masks. Additional frames may be needed depending of the cutout size chosen. This can be solved by running download_update.sh and re-running the cutout generator. Run:
 
+```
 python mk_stripe82_stamps_beta.py
 bash download_update.sh
 python mk_stripe82_stamps_beta.py
+```
 
 At this point your observed galaxy stamps are ready.
 
@@ -33,15 +35,15 @@ The mock galaxies consist of a combination of bulge + disc profiles produced wit
 
 1) Subtract realistic SEDs from the observed galaxies with:
 
-'''
+```
 python get_seds.py
-'''
+```
 
 2) Make a catalogue with properties of your simulated galaxies. Run:
 
-'''
+```
 python mk_catalog.py
-'''
+```
 
 3) Get your PSFs. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from here:
 
@@ -51,9 +53,9 @@ Make sure that the files do not contain NaNs (replace with zeros if necessary). 
 
 4) Make the simulated profiles for all the galaxies defined in the simulated catalog (step 2). Run:
 
-'''
+```
 python mk_imfit_sim_beta.py
-'''
+```
 
 5) Get back/foreground frames. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
 
@@ -62,9 +64,9 @@ Otherwise skip this step and just set the bg_frames option in the config file to
 
 6) Add realism to your simulated stamps (step 4) by adjusting the flux of the simulated profiles to realistic values (obtained with step 1) and overlap with an observed back/foreground (previous step). Run:
 
-'''
+```
 python mk_mag_fits_beta.py
-'''
+```
 
 
 ## Setup config file
@@ -77,7 +79,7 @@ General guidelines:
 
 - The config file should be completed as:
 
-'''
+```
 obs:
   catalogue: "/path/to/directory/catalogue_obs_galaxies.fits"
   download_script: "/path/to/directory/download.sh"
@@ -98,7 +100,7 @@ sim:
   gen_file: "/path/to/directory/gen_fits.sh"
   out_path: "/path/to/directory/mocks/"
 
-'''
+```
   
 
 - "?" in psf_file will be replaced with the band name (u,g,r,i or z). The number in "[]" indicates the extensionwhere the PSF is, if Primary then remove "[]".
