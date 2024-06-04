@@ -15,10 +15,12 @@ The observation frames can be downloaded from the IAC [Stripe82 website](http://
 
 1) Download the frames required to produce the cutouts. Run:
 
+```
 python mk_download_file.py
 bash download.sh
+```
 
-2) Produce the cutout stamps witht their respective masks. Additional frames may be needed depending of the cutout size chosen. This can be solved by running download_update.sh and re-running the cutout generator. Run:
+2) Produce the cutout stamps with their respective masks. Additional frames may be needed depending of the cutout size chosen. This can be solved by running download_update.sh and re-running the cutout generator. Run:
 
 ```
 python mk_stripe82_stamps_beta.py
@@ -29,6 +31,7 @@ python mk_stripe82_stamps_beta.py
 At this point your observed galaxy stamps are ready.
 
 ## Stripe82 mock dataset
+
 The mock galaxies consist of a combination of bulge + disc profiles produced with [Imfit](https://www.mpe.mpg.de/~erwin/code/imfit/) (required) and convolved with the Sloan PSFs in the u,g,r,i and z bands. These are later inserted in a real Stripe82 image.
 
 ### Steps to produce the mocks
@@ -103,7 +106,8 @@ sim:
 ```
   
 
-- "?" in psf_file will be replaced with the band name (u,g,r,i or z). The number in "[]" indicates the extensionwhere the PSF is, if Primary then remove "[]".
+- "?" in psf_file will be replaced with the band name (u,g,r,i or z) in the code -keep the "?"-.
+- The number in "[]" indicates the fits extension where the PSF is, if Primary then remove "[]".
 
 
 
