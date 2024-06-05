@@ -13,14 +13,14 @@ The observation frames can be downloaded from the IAC [Stripe82 website](http://
 
 ### Steps to produce the cutouts
 
-1) Download the frames required to produce the cutouts. Run:
+1) **Download the frames** required to produce the cutouts. Run:
 
 ```
 python mk_download_file.py
 bash download.sh
 ```
 
-2) Produce the cutout stamps with their respective masks. Additional frames may be needed depending of the cutout size chosen. This can be solved by running download_update.sh and re-running the cutout generator. Run:
+2) **Produce the cutout stamps with their masks**. Additional frames may be needed depending of the cutout size chosen. This can be solved by running download_update.sh and re-running the cutout generator. Run:
 
 ```
 python mk_stripe82_stamps_beta.py
@@ -28,7 +28,7 @@ bash download_update.sh
 python mk_stripe82_stamps_beta.py
 ```
 
-At this point your observed galaxy stamps are ready.
+At this point your **observed galaxy stamps are ready**.
 
 ## Stripe82 mock dataset
 
@@ -36,36 +36,36 @@ The mock galaxies consist of a combination of bulge + disc profiles produced wit
 
 ### Steps to produce the mocks
 
-1) Subtract realistic SEDs from the observed galaxies with:
+1) **Subtract realistic SEDs from the observed galaxies** with:
 
 ```
 python get_seds.py
 ```
 
-2) Make a catalogue with properties of your simulated galaxies. Run:
+2) **Make a catalogue** with properties of your simulated galaxies. Run:
 
 ```
 python mk_catalog.py
 ```
 
-3) Get your PSFs. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from here:
+3) **Get your PSFs**. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from here:
 
 [PSFs](https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5317I/abstract)
 
-Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to '2N+1', where N is the side of the stamps you want to make.
+It must be a 2D-image in a FITS file. Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to '2N+1', where N is the side of the stamps you want to make.
 
-4) Make the simulated profiles for all the galaxies defined in the simulated catalog (step 2). Run:
+4) **Make the simulated profiles** for all the galaxies defined in the simulated catalog (step 2). Run:
 
 ```
 python mk_imfit_sim_beta.py
 ```
 
-5) Get back/foreground frames. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
+5) **Get back/foreground frames**. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
 
 
 Otherwise skip this step and just set the bg_frames option in the config file to be the path of the observed frames used earlier. 
 
-6) Add realism to your simulated stamps (step 4) by adjusting the flux of the simulated profiles to realistic values (obtained with step 1) and overlap with an observed back/foreground (previous step). Run:
+6) **Add realism** to your simulated stamps (step 4) by **adjusting the flux** of the simulated profiles to realistic values (obtained with step 1) and **overlaping with an observed back/foreground** (obtained in the previous step). Run:
 
 ```
 python mk_mag_fits_beta.py
