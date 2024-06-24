@@ -15,7 +15,7 @@ The observation frames can be downloaded from the IAC [Stripe82 website](http://
 
 1) **Download the frames** required to produce the cutouts.
 
-   Easy way: open a terminal and run 'bash download_frames.sh' . This will create a 'frames' directory and download the frames inside it (165G total).
+   Easy way: open a terminal and run `bash download_frames.sh`. This will create a `frames` directory and download the frames inside it (165G total).
 
    Long way: Run
 
@@ -56,7 +56,7 @@ python mk_catalog.py
 
 [PSFs](https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5317I/abstract)
 
-It must be a 2D-image in a FITS file. Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to '2N+1', where N is the side of the stamps you want to make.
+It must be a 2D-image in a FITS file. Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to `2N+1`, where N is the side of the stamps you want to make.
 
 4) **Make the simulated profiles** for all the galaxies defined in the simulated catalog (step 2). Run:
 
@@ -66,7 +66,7 @@ python mk_imfit_sim_beta.py
 
 5) **Get back/foreground frames**. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
 
-Open a terminal and run 'bash download_bg_frames.sh' . This will create a 'frames_bg' directory and download the frames inside it (96G total).
+Open a terminal and run `bash download_bg_frames.sh`. This will create a 'frames_bg' directory and download the frames inside it (96G total).
 
 Otherwise skip this step and just set the bg_frames option in the config file to be the path of the observed frames used earlier. 
 
