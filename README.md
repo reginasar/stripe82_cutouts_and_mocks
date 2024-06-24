@@ -52,9 +52,7 @@ python get_seds.py
 python mk_catalog.py
 ```
 
-3) **Get your PSFs**. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from here:
-
-[PSFs](https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5317I/abstract)
+3) **Get your PSFs**. Either with a simple gaussian approximation or downloading realistic SDSS PSFs from [here](https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5317I/abstract)
 
 It must be a 2D-image in a FITS file. Make sure that the files do not contain NaNs (replace with zeros if necessary). To accelarete the convolution step, reshape your PSFs to have dimensions smaller or equal to `2N+1`, where N is the side of the stamps you want to make.
 
