@@ -109,8 +109,8 @@ sim:
 ```
   
 
-- "?" in psf_file will be replaced with the band name (u,g,r,i or z) in the code -keep the "?"-.
-- The number in "[]" indicates the fits extension where the PSF is, if Primary then remove "[]".
+- `?` in psf_file will be replaced with the band name (u,g,r,i or z) in the code -keep the `?`-.
+- For the PSF file, the number in `[]` indicates the fits extension number. This is where the PSF is, if it's in the Primary then remove `[]`.
 
 
 
