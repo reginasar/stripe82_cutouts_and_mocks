@@ -64,9 +64,7 @@ It must be a 2D-image in a FITS file. Make sure that the files do not contain Na
 python mk_imfit_sim_beta.py
 ```
 
-5) **Get back/foreground frames**. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames with: 
-
-Open a terminal and run `bash download_bg_frames.sh`. This will create a 'frames_bg' directory and download the frames inside it (96G total).
+5) **Get back/foreground frames**. In case you don't want to re-use the frames of the observed galaxies, you should download a new set of frames by running `bash download_bg_frames.sh` in a terminal. This will create a 'frames_bg' directory and download the frames inside it (96G total).
 
 Otherwise skip this step and just set the bg_frames option in the config file to be the path of the observed frames used earlier. 
 
